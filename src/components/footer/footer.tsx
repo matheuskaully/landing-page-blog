@@ -1,20 +1,26 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../../public/Brand-Logo.svg'
+import { Logo } from '../logo'
 
-export default function Footer() {
+export function Footer() {
   return (
-    <footer>
-      <div>
-        <div>
-          <Link href={'/'}>
-            <Image src={logo} alt="site.set" width={116} height={32} />
-          </Link>
+    <footer className="border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between gap-8 py-8 md:flex-row">
+          <Logo />
 
-          <nav className="flex">
-            <Link href={'/'}>Termos de Uso</Link>
-            <Link href={'/'}>Política de Privacidade</Link>
-            <Link href={'/'}>Enviar F eedback</Link>
+          <nav className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:flex-row">
+            <Link href={'/termos-de-uso'} className="hover:text-primary">
+              Termos de Uso
+            </Link>
+            <Link
+              href={'/politica-de-privacidade'}
+              className="hover:text-primary"
+            >
+              Política de Privacidade
+            </Link>
+            <Link href={'/feedback'} className="hover:text-primary">
+              Enviar Feedback
+            </Link>
           </nav>
         </div>
       </div>
