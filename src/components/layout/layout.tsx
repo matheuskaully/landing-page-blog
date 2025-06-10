@@ -12,6 +12,7 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       <main className="mb-12 flex flex-1 flex-col">{children}</main>
       <Footer />
+      <span></span>
     </div>
   )
 }
