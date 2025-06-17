@@ -14,7 +14,7 @@ const inter = Inter({
 export function Layout({ children }: LayoutProps) {
   return (
     <div
-      className={`${inter.className} relative flex min-h-screen flex-col bg-gray-700`}
+      className={`${inter.className} relative flex min-h-screen flex-col bg-gray-700 antialiased`}
     >
       <Header />
       <main className="mb-12 flex flex-1 flex-col">{children}</main>
