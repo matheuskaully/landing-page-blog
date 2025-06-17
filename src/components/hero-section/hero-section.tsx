@@ -7,7 +7,7 @@ import heroImg from '../../../public/hero-section.svg'
 export function HeroSection() {
   return (
     <section className="container relative mt-16 flex items-center justify-center">
-      <div className="grid min-h-[20rem] grid-cols-1 items-center gap-8 md:h-[36rem] md:grid-cols-2">
+      <div className="grid min-h-[20rem] grid-cols-1 items-center gap-8 py-8 md:h-[36rem] md:grid-cols-2 md:py-0">
         <div className="flex flex-col items-center justify-center gap-4 md:items-start md:gap-8 lg:items-start">
           <h1 className="font-alt text-heading-hg text-gray-100">
             Venda seus produtos como afiliado em um único lugar

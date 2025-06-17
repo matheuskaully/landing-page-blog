@@ -6,8 +6,8 @@ import featureImg from '../../../public/feature-section.svg'
 
 export function FeatureSection() {
   return (
-    <section className="container grid gap-6 bg-gray-700 pb-8 md:grid-cols-2 md:py-10">
-      <div className="flex flex-col gap-2 rounded-lg bg-gray-500 p-6 md:p-12">
+    <section className="container grid gap-6 bg-gray-700 pb-8 md:mb-32 md:grid-cols-2 md:py-10">
+      <div className="flex flex-col gap-4 rounded-lg bg-gray-500 p-6 md:p-12">
         <span className="w-fit rounded-sm bg-blue-400 px-2 py-1 text-body-tag uppercase tracking-wider text-blue-200">
           Simples
         </span>
@@ -16,7 +16,7 @@ export function FeatureSection() {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-2 rounded-lg bg-gray-500 p-6 md:p-12">
+      <div className="flex flex-col gap-4 rounded-lg bg-gray-500 p-6 md:p-12">
         <span className="w-fit rounded-sm bg-blue-400 px-2 py-1 text-body-tag uppercase tracking-wider text-blue-200">
           Prático
         </span>
@@ -27,7 +27,7 @@ export function FeatureSection() {
 
       <div className="col-span-full flex flex-col gap-2">
         <div className="grid grid-cols-1 gap-12 rounded-lg bg-gray-500 p-6 md:grid-cols-2 md:gap-4 md:p-12">
-          <div className="flex flex-col gap-4 rounded-lg md:gap-0">
+          <div className="flex flex-col gap-4 rounded-lg">
             <span className="w-fit rounded-sm bg-blue-400 px-2 py-1 text-body-tag uppercase tracking-wider text-blue-200">
               Personalizável
             </span>
@@ -40,7 +40,7 @@ export function FeatureSection() {
               className="mt-4 hidden w-fit rounded-full md:mt-auto md:flex"
             >
               <Link href={'/criar-loja'}>
-                Ciar loja grátis <ArrowRight />
+                Criar loja grátis <ArrowRight />
               </Link>
             </Button>
           </div>
