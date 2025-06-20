@@ -1,14 +1,11 @@
 import { HeartHandshake, PaintbrushVertical, Store } from 'lucide-react'
-import bgSupport from '../../../public/background.png'
 import { SupportCard } from './support-card'
 
 export function SupportSection() {
   return (
-    <section
-      style={{ backgroundImage: `url(${bgSupport.src})` }}
-      className="bg-gradient-to-r from-gray-500 to-gray-700 bg-cover bg-center bg-no-repeat"
-    >
-      <div className="container my-32 flex flex-col gap-12 bg-contain bg-center">
+    <section className="relative bg-gradient-to-r from-gray-500 to-gray-700">
+      <div className="absolute inset-0 bg-[url(/background-features.png)] bg-cover bg-center bg-no-repeat md:block" />
+      <div className="container relative my-24 flex flex-col gap-12 bg-contain bg-center md:my-32">
         <h2 className="mx-auto max-w-[488px] text-center text-heading-xl text-gray-100">
           Sua loja de afiliados, simples, do jeito que deveria ser
         </h2>

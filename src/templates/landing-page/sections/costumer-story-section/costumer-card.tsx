@@ -14,8 +14,8 @@ export function CostumerCard({
   title,
 }: CustomerTestimonial) {
   return (
-    <div className="flex flex-col justify-between gap-10 rounded-xl border border-gray-400 bg-gray-600 p-10">
-      <p className="text-body-md italic text-gray-200">{description}</p>
+    <div className="flex flex-col justify-between gap-6 rounded-xl border border-gray-400 bg-gray-600 p-8 md:gap-10 md:p-10">
+      <p className="text text-body-md italic text-gray-200">{description}</p>
 
       <div className="flex gap-3">
         <Image

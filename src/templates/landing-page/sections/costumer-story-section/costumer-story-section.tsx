@@ -6,7 +6,7 @@ const costumerStories = [
     name: 'Annabelle Smith',
     title: 'CEO na Anne Corp',
     description:
-      'Criar minha loja com o site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos. A',
+      'Criar minha loja com o site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos.',
     image: '/customer-01.png',
   },
   {
@@ -21,7 +21,7 @@ const costumerStories = [
 
 export function CustomerStorySection() {
   return (
-    <section className="container my-32 flex flex-col gap-12">
+    <section className="container my-24 flex flex-col gap-12 md:my-32">
       <h2 className="text-center text-heading-xl text-gray-100">
         Quem utiliza, aprova!
       </h2>
