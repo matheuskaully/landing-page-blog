@@ -33,7 +33,7 @@ export function PostCard({
   return (
     <Link
       href={`/blog/${slugFormatted}`}
-      className="relative flex max-w-[368px] flex-col overflow-hidden rounded-xl border border-gray-400 bg-gray-600 p-3"
+      className="relative flex max-w-[368px] flex-col overflow-hidden rounded-xl border border-gray-400 bg-gray-600 p-3 duration-200 ease-in-out hover:scale-[1.01] hover:brightness-105"
     >
       <Image
         src={imageFormatted}
