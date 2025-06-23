@@ -1,16 +1,35 @@
-import { cn } from '@/lib/utils'
 import { Search as SearchIcon } from 'lucide-react'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { ChangeEvent, FormEvent, useCallback } from 'react'
 
 export function Search() {
-  const [searchQuery, setSearchQuery] = useState<string>('')
+  const router = useRouter()
+  const query = router.query.q as string
+
+  const handleSearch = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault()
+      if (query.trim() === '') {
+        return
+      }
+      router.push(`/blog?q=${encodeURIComponent(query)}`)
+    },
+    [query, router],
+  )
+
+  const handleQueryChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newQuery = e.target.value
+
+    router.push(`/blog?q=${encodeURIComponent(newQuery)}`, undefined, {
+      shallow: true,
+      scroll: false,
+    })
+  }
 
   return (
-    <div
-      className={cn(
-        'group flex h-fit w-full items-center gap-3 rounded-lg px-4 py-2 ring-1 focus-within:ring-blue-200 md:w-fit',
-        searchQuery.length > 0 ? 'ring-blue-200' : 'ring-gray-400',
-      )}
+    <form
+      onSubmit={handleSearch}
+      className="group flex h-fit w-full items-center gap-3 rounded-lg px-4 py-2 ring-1 ring-gray-400 focus-within:ring-blue-200 md:w-fit"
     >
       <div>
         <SearchIcon
@@ -18,11 +37,11 @@ export function Search() {
         />
       </div>
       <input
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={handleQueryChange}
         type="search"
         placeholder="Buscar..."
-        className="bg-transparent text-gray-100 outline-none placeholder:text-gray-300"
+        className="bg-transparent text-gray-100 outline-none duration-200 placeholder:text-body-sm placeholder:text-gray-300"
       />
-    </div>
+    </form>
   )
 }
