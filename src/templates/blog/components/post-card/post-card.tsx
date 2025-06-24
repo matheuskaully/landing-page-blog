@@ -1,5 +1,4 @@
 import formatDate from '@/utils/format-date'
-import generateSlug from '@/utils/generate-slug'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -26,13 +25,12 @@ export function PostCard({
   title,
 }: PostCardProps) {
   const formattedDate = formatDate(date)
-  const slugFormatted = generateSlug(slug)
   const imageFormatted = decodeURIComponent(image)
   const avatarFormattedImg = author.avatar.trimEnd()
 
   return (
     <Link
-      href={`/blog/${slugFormatted}`}
+      href={`/blog/${slug}`}
       className="relative flex max-w-[368px] flex-col overflow-hidden rounded-xl border border-gray-400 bg-gray-600 p-3 duration-200 ease-in-out hover:scale-[1.01] hover:brightness-105"
     >
       <Image

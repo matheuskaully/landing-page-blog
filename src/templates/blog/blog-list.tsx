@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { PostGridCard } from './components/post-grid-card/post-grid-card'
 import { PostCard } from './components/post-card'
 import { allPosts } from 'contentlayer/generated'
+import { Inbox } from 'lucide-react'
 
 export function BlogList() {
   const router = useRouter()
@@ -11,7 +12,12 @@ export function BlogList() {
   const pageTitle = query
     ? `Resultados de busca para "${query}"`
     : 'Dicas e estratégias para impulsionar seu negócio'
-  const posts = allPosts
+  const posts = query
+    ? allPosts.filter((post) =>
+        post.title.toLowerCase().includes(query.toLocaleLowerCase()),
+      )
+    : allPosts
+  const hasPosts = posts.length > 0
 
   return (
     <section className="flex flex-col gap-14">
@@ -31,21 +37,40 @@ export function BlogList() {
         </header>
 
         <PostGridCard>
-          {posts.map((post) => (
-            <PostCard
-              key={post._id}
-              title={post.title}
-              date={post.date}
-              author={{
-                avatar: post.author?.avatar,
-                name: post.author?.name,
-              }}
-              description={post.description}
-              image={post.image}
-              slug={'/'}
-            />
-          ))}
+          {hasPosts &&
+            posts.map((post) => (
+              <PostCard
+                key={post._id}
+                title={post.title}
+                date={post.date}
+                author={{
+                  avatar: post.author?.avatar,
+                  name: post.author?.name,
+                }}
+                description={post.description}
+                image={post.image}
+                slug={post.slug}
+              />
+            ))}
         </PostGridCard>
+
+        {!hasPosts && !query && (
+          <div className="col-span-3 mx-auto flex min-h-[40vh] items-center text-center">
+            <p className="flex flex-col items-center gap-2 text-gray-300">
+              <Inbox className="size-8 text-cyan-100" />
+              Nenhum post encontrado.
+            </p>
+          </div>
+        )}
+
+        {!hasPosts && query && (
+          <div className="col-span-3 mx-auto flex min-h-[40vh] items-center text-center">
+            <p className="flex flex-col items-center gap-2 text-gray-300">
+              <Inbox className="size-8 text-cyan-100" />
+              Não foi encontrado posts com a busca realizada!
+            </p>
+          </div>
+        )}
       </div>
 
       <CallToActionSection />
