@@ -1,3 +1,4 @@
+import { Avatar } from '@/components/avatar'
 import formatDate from '@/utils/format-date'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,7 +27,6 @@ export function PostCard({
 }: PostCardProps) {
   const formattedDate = formatDate(date)
   const imageFormatted = decodeURIComponent(image)
-  const avatarFormattedImg = author.avatar.trimEnd()
 
   return (
     <Link
@@ -57,14 +57,10 @@ export function PostCard({
         <div className="mt-4">
           <div className="h-px w-full bg-gray-400" />
           <div className="mt-2 flex items-center gap-2">
-            <Image
-              src={avatarFormattedImg}
-              alt={`Imagem do autor ${author.name}`}
-              className="h-5 w-5 rounded-full border border-blue-200 object-cover"
-              width={20}
-              height={20}
-            />
-            <span className="text-body-xs text-gray-300">{author.name}</span>
+            <Avatar.Container>
+              <Avatar.Image src={author.avatar} alt={author.name} size="xs" />
+              <Avatar.Title>{author.name}</Avatar.Title>
+            </Avatar.Container>
           </div>
         </div>
       </div>

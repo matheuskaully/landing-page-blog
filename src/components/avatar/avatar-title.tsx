@@ -5,5 +5,5 @@ interface AvatarTitleProps {
 }
 
 export function AvatarTitle({ children }: AvatarTitleProps) {
-  return <strong className="text-body-sm text-gray-200">{children}</strong>
+  return <strong className="text-body-sm text-gray-300">{children}</strong>
 }

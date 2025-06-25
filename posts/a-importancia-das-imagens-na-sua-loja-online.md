@@ -7,6 +7,7 @@ author:
   name: Luana Santos
   avatar: /customer-01.png
 ---
+
 Uma imagem vale mais que mil palavras — e, no e-commerce, isso é mais verdadeiro do que nunca. Fotos de alta qualidade podem ser o diferencial entre uma venda realizada e um carrinho abandonado.
 
 Veja como melhorar suas imagens:

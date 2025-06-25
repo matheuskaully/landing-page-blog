@@ -35,7 +35,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
               {item.label}
             </Link>
           ) : (
-            <span className="text-foreground font-medium text-blue-200 underline underline-offset-4">
+            <span className="text-foreground max-w-[150px] overflow-hidden truncate whitespace-nowrap font-medium text-blue-200 md:max-w-full">
               {item.label}
             </span>
           )}
