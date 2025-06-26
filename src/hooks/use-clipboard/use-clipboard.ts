@@ -1,0 +1,41 @@
+import { useCallback, useEffect, useState } from 'react'
+
+interface UseClipboard {
+  timeout?: number
+}
+
+export function useClipboard({ timeout = 2000 }: UseClipboard) {
+  const [isCopied, setIsCopied] = useState<boolean>(false)
+
+  const handleCopy = useCallback(async (text: string) => {
+    if (!navigator.clipboard) {
+      console.error('Clipboard não suportado pelo navegador')
+      return false
+    }
+
+    try {
+      await navigator.clipboard.writeText(text)
+    } catch (error) {
+      console.error('Falha ao copiar o texto: ', error)
+      setIsCopied(false)
+      return false
+    }
+
+    setIsCopied(true)
+  }, [])
+
+  useEffect(() => {
+    if (isCopied) {
+      const timer = setTimeout(() => {
+        setIsCopied(false)
+      }, timeout)
+
+      return () => clearTimeout(timer)
+    }
+  }, [isCopied, timeout])
+
+  return {
+    isCopied,
+    handleCopy,
+  }
+}
