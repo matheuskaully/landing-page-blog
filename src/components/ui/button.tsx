@@ -23,6 +23,7 @@ const buttonVariants = cva(
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-md px-8',
         icon: 'h-10 w-10',
+        sharedButton: 'md:px-4 md:py-2.5 px-2.5 py-2 w-fit rounded-xl',
       },
     },
     defaultVariants: {

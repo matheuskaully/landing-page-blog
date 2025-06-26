@@ -3,20 +3,24 @@ import { CallToActionSection } from '@/templates/landing-page/sections'
 import { useRouter } from 'next/router'
 import { PostGridCard } from './components/post-grid-card/post-grid-card'
 import { PostCard } from './components/post-card'
-import { allPosts } from 'contentlayer/generated'
+import { Post } from 'contentlayer/generated'
 import { Inbox } from 'lucide-react'
 
-export function BlogList() {
+export interface BlogListProps {
+  posts: Post[]
+}
+
+export function BlogList({ posts }: BlogListProps) {
   const router = useRouter()
   const query = router.query.q as string
   const pageTitle = query
     ? `Resultados de busca para "${query}"`
     : 'Dicas e estratégias para impulsionar seu negócio'
-  const posts = query
-    ? allPosts.filter((post) =>
+  const postArray = query
+    ? posts.filter((post) =>
         post.title.toLowerCase().includes(query.toLocaleLowerCase()),
       )
-    : allPosts
+    : posts
   const hasPosts = posts.length > 0
 
   return (
@@ -38,7 +42,7 @@ export function BlogList() {
 
         <PostGridCard>
           {hasPosts &&
-            posts.map((post) => (
+            postArray.map((post) => (
               <PostCard
                 key={post._id}
                 title={post.title}

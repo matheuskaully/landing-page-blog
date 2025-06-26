@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Logo } from '../../logo'
+import { ArrowUpRight } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -21,6 +22,17 @@ export function Footer() {
             <Link href={'/feedback'} className="hover:text-blue-200">
               Enviar Feedback
             </Link>
+
+            <div className="flex flex-col rounded-xl border border-white/5 bg-gray-400 px-2 py-1 text-xs">
+              <span className="tracking-wide">Coded by</span>
+              <Link
+                href="https://matheuskaully.site"
+                className="flex items-center gap-1 font-semibold tracking-wide underline-offset-4 hover:underline"
+              >
+                Matheus Kaúlly
+                <ArrowUpRight className="size-3" />
+              </Link>
+            </div>
           </nav>
         </div>
       </div>
