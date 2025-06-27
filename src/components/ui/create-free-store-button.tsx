@@ -12,7 +12,7 @@ export default function CreateFreeStoreButton({
 }: CreateFreeStoreButtonProps) {
   return (
     <Button className={cn('w-fit rounded-full', className)} asChild>
-      <Link href="/criar-loja">
+      <Link href="/">
         Criar loja grátis
         <ArrowRight />
       </Link>
