@@ -1,9 +1,8 @@
 import { Avatar } from '@/components/avatar'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import formatDate from '@/utils/format-date'
-import { allPosts } from 'contentlayer/generated'
+import { Post } from 'contentlayer/generated'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { Markdown } from '@/components/markdown'
 import { Share2 } from 'lucide-react'
 
@@ -12,14 +11,15 @@ import { Skeleton } from '@/components/skeleton'
 import { useShare } from '@/hooks/use-share'
 import { CallToActionSection } from '@/templates/landing-page/sections'
 
-export function PostPage() {
-  const router = useRouter()
-  const slug = router.query.slug as string
-  const post = allPosts.find((post) => post.slug === slug)!
-  const dateFormatted = post && formatDate(post?.date)
-  const avatarFormatted = post && post.author.avatar.trim()
+export interface PostPageProps {
+  post: Post
+}
 
-  const postUrl = `https://site.set/blog/${slug}`
+export function PostPage({ post }: PostPageProps) {
+  const dateFormatted = formatDate(post?.date)
+  const avatarFormatted = post.author.avatar.trim()
+
+  const postUrl = `https://site.set/blog/${post.slug}`
 
   const { shareButtons } = useShare({
     url: postUrl,

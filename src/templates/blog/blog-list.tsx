@@ -21,7 +21,7 @@ export function BlogList({ posts }: BlogListProps) {
         post.title.toLowerCase().includes(query.toLocaleLowerCase()),
       )
     : posts
-  const hasPosts = posts.length > 0
+  const hasPosts = postArray.length > 0
 
   return (
     <section className="flex flex-col gap-14">
