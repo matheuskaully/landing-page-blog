@@ -19,7 +19,7 @@ export function PostPage({ post }: PostPageProps) {
   const dateFormatted = formatDate(post?.date)
   const avatarFormatted = post.author.avatar.trim()
 
-  const postUrl = `https://site.set/blog/${post.slug}`
+  const postUrl = `https://site-set-today.vercel.app/blog/${post.slug}`
 
   const { shareButtons } = useShare({
     url: postUrl,
