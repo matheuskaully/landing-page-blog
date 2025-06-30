@@ -1,10 +1,13 @@
 import { Search as SearchIcon } from 'lucide-react'
-import { useRouter } from 'next/router'
+import { useSearchParams, useRouter } from 'next/navigation'
+
 import { ChangeEvent, FormEvent, useCallback } from 'react'
 
 export function Search() {
   const router = useRouter()
-  const query = router.query.q as string
+  const searchParams = useSearchParams()
+  const query = searchParams?.get('q') ?? ''
+  const hasQuery = !!searchParams?.has('q')
 
   const handleSearch = useCallback(
     (e: FormEvent) => {
@@ -17,11 +20,10 @@ export function Search() {
     [query, router],
   )
 
-  const handleQueryChange = (e: ChangeEvent<HTMLInputElement>) => {
+  function handleQueryChange(e: ChangeEvent<HTMLInputElement>) {
     const newQuery = e.target.value
 
-    router.push(`/blog?q=${encodeURIComponent(newQuery)}`, undefined, {
-      shallow: true,
+    router.push(`/blog?q=${encodeURIComponent(newQuery)}`, {
       scroll: false,
     })
   }
@@ -39,6 +41,7 @@ export function Search() {
       <input
         onChange={handleQueryChange}
         type="search"
+        autoFocus={hasQuery}
         placeholder="Buscar..."
         className="bg-transparent text-gray-100 outline-none duration-200 placeholder:text-body-sm placeholder:text-gray-300"
       />
