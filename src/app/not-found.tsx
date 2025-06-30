@@ -27,7 +27,7 @@ export default function NotFound() {
 
         <div className="mb-8 mt-4 h-px w-full bg-gray-400" />
 
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-4 md:flex-row">
           <Button
             variant={'default'}
             asChild
