@@ -28,6 +28,7 @@ export function Footer() {
               <Link
                 href="https://matheuskaully.site"
                 className="flex items-center gap-1 font-semibold tracking-wide underline-offset-4 hover:underline"
+                target="_blank"
               >
                 Matheus Kaúlly
                 <ArrowUpRight className="size-3" />
