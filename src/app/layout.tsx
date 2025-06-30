@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 
 export const metadata = {
   title: 'Site.Set',
-  description: '',
+  description: '.',
 }
 
 export default function RootLayout({
