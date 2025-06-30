@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useState } from 'react'
 
-interface UseClipboard {
+interface UseClipboardProps {
   timeout?: number
 }
 
-export function useClipboard({ timeout = 2000 }: UseClipboard) {
+export function useClipboard({ timeout = 2000 }: UseClipboardProps) {
   const [isCopied, setIsCopied] = useState<boolean>(false)
 
   const handleCopy = useCallback(async (text: string) => {
