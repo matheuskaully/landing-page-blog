@@ -14,7 +14,7 @@ export function Header() {
             <ActiveLink href={'/'}>Início</ActiveLink>
             <ActiveLink href={'/blog'}>Blog</ActiveLink>
             <Button variant={'secondary'} asChild>
-              <Link href={'/'}>Começar</Link>
+              <Link href={'/comecar'}>Começar</Link>
             </Button>
           </nav>
         </div>
