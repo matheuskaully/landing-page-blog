@@ -91,9 +91,3 @@ Abra seu navegador web e navegue até `http://localhost:3000`. A página será a
 Este projeto foi desenvolvido por:
 
 **[@matheuskaully](https://github.com/matheuskaully)**
-
------
-
-## 📜 Licença
-
-Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](https://www.google.com/search?q=LICENSE) (se você tiver um no seu repo).
