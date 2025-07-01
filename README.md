@@ -16,7 +16,6 @@ Este projeto foi construído com um conjunto robusto de tecnologias modernas par
 * **Tailwind CSS**: Framework CSS utility-first para estilização rápida e responsiva.
 * **ESLint**: Ferramenta de linting para manter a qualidade e consistência do código.
 * **Prettier**: Formatador de código para garantir um estilo de código unificado.
-* **Radix UI**: Biblioteca de componentes sem estilo para construir interfaces de usuário acessíveis.
 * **shadcn/ui**: Componentes de UI construídos com Radix UI e Tailwind CSS.
 * **Lucide React**: Biblioteca de ícones simples e consistentes.
 
