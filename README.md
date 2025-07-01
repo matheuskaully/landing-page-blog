@@ -1,6 +1,6 @@
 # 🚀 Landing Page Blog
 
-![Capa do Projeto - Exemplo Visual](https://via.placeholder.com/https://site-set-today.vercel.app/og-image.jpg)
+![Capa do Projeto](public/og-image.jpg)
 
 Este repositório contém uma **landing page responsiva** desenvolvida como parte dos materiais do curso de React da Rocketseat. O projeto visa demonstrar uma plataforma funcional para a **venda de produtos online**, com um foco especial na experiência do usuário e na adaptabilidade a diferentes dispositivos.
 
