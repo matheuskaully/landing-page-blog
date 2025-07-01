@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: 'Site.Set',
     url: 'https://site-set-today.vercel.app/og-image.jpg',
     siteName: 'Site.Set',
+    description: 'Venda seus produtos como afiliado em um único lugar!',
     locale: 'pt_BR',
     type: 'website',
     images: [
