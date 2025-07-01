@@ -88,15 +88,6 @@ Abra seu navegador web e navegue até `http://localhost:3000`. A página será a
 
 -----
 
-## 🤝 Contribuição
-
-Contribuições são **muito bem-vindas**\! Se você tem ideias para melhorias, encontrou um bug ou quer adicionar novas funcionalidades, sinta-se à vontade para:
-
-  * Abrir uma [Issue](https://www.google.com/search?q=https://github.com/matheuskaully/landing-page-blog/issues)
-  * Enviar um [Pull Request](https://www.google.com/search?q=https://github.com/matheuskaully/landing-page-blog/pulls)
-
------
-
 ## 👨‍💻 Desenvolvido Por
 
 Este projeto foi desenvolvido por:
