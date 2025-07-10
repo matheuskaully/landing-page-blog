@@ -86,8 +86,6 @@ Abra seu navegador web e navegue até `http://localhost:3000`. A página será a
 
 -----
 
-## 👨‍💻 Desenvolvido Por
-
 Este projeto foi desenvolvido por:
 
 **[@matheuskaully](https://github.com/matheuskaully)**
